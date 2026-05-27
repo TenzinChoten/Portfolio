@@ -1,0 +1,89 @@
+export const PROJECTS = {
+  label: 'Hand-Coded Work',
+  title: 'Projects',
+  headline:
+    'Full stack applications built end to end — from backend architecture and APIs to responsive web and mobile experiences.',
+  items: [
+    // [Reason] Add TLCM library catalogue platform to projects portfolio
+    {
+      id: 'tlcm',
+      title: 'TLCM (Tibetan Library & Catalogue Management)',
+      description:
+        'Worked on a full-stack digital library and catalogue management platform for Tibetan library resources, book cataloguing, lending workflows, and user activity. Migrated the backend from Django to Laravel per client requirements, and implemented advanced lending systems, real-time notifications, and N+1 query optimizations across relational data flows. Contributed to scalable admin workflows and modern frontend interactions for library inventory, users, and borrowing in a production-oriented environment.',
+      tags: [
+        'PostgreSQL',
+        'Laravel',
+        'Filament',
+        'React',
+        'REST API',
+        'Database Optimization',
+        'N+1 Query Optimization',
+        'Notification Systems',
+        'Library Management Systems',
+        'Backend Migration',
+        'Authentication Systems',
+        'Database Design',
+      ],
+      href: null,
+    },
+    // [Reason] Replace gym management entry with Thukk full-stack dating platform
+    {
+      id: 'thukk',
+      title: 'Thukk',
+      description:
+        // [Reason] Shorten Thukk copy to roughly half length for portfolio readability
+        'Built a scalable full-stack community dating platform for meaningful connections through communities, intelligent matching, and real-time interaction. Developed a production backend with JWT authentication, refresh token rotation, role-based authorization, WebSockets, matchmaking, and moderation. Engineered relational systems for likes, matches, and conversations with Cloudinary uploads, DTO-based APIs, Docker deployment, and security hardening.',
+      tags: [
+        'PostgreSQL',
+        'Go Fiber',
+        'GORM',
+        'JWT Authentication',
+        'Refresh Token Rotation',
+        'WebSockets',
+        'REST API',
+        'Cloudinary',
+        'Docker',
+        'Flutter',
+        'Realtime Messaging',
+        'Database Design',
+        'Role-Based Authorization',
+        'Production Security Hardening',
+      ],
+      href: null,
+    },
+    {
+      id: 'tibling',
+      title: 'Tibling',
+      description:
+        'Built a full-stack language learning platform inspired by Duolingo, designed to help English speakers learn Tibetan through interactive lessons, gamification, and intelligent progress tracking. Developed a scalable learning architecture with structured courses, exercise systems, JWT authentication, streak tracking, XP rewards, and crown-level progression. Designed the backend schema and APIs to support complex relational learning data and Unicode Tibetan script support.',
+      tags: [
+        'PostgreSQL',
+        'AWS RDS',
+        'JWT Authentication',
+        'REST API',
+        'React',
+        'Flutter',
+        'Gamification Systems',
+        'Database Design',
+      ],
+      href: null,
+    },
+    // [Reason] Move Apex Gym to last position in projects list
+    {
+      id: 'apex-gym',
+      title: 'Apex Gym',
+      description:
+        'Built a complete digital gym membership platform focused on seamless online enrollment, subscription management, and member experience. Developed a scalable full stack system with secure authentication, recurring membership workflows, digital agreements, and personalized member dashboards. Designed and implemented a decoupled architecture using Next.js and Laravel to deliver fast performance, scalable APIs, and smooth user interactions across the platform.',
+      tags: [
+        'Next.js',
+        'Laravel',
+        'REST API',
+        'Subscription Systems',
+        'Database Architecture',
+        'SSR',
+        'Authentication',
+      ],
+      href: null,
+    },
+  ],
+}

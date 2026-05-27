@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- [Reason] Tab favicon is TC initials only — no background box per user preference -->
+  <!-- [Reason] Larger initials so TC reads clearly at favicon size in the browser tab -->
+  <text
+    x="16"
+    y="17"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="22"
+    font-weight="700"
+    letter-spacing="-0.05em"
+    fill="#9966ff"
+  >TC</text>
+</svg>

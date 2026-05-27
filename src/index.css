@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+
+@theme {
+  /* [Reason] Match rammaheshwari.com font pairing (Sora body, Fraunces display) */
+  --font-sans: 'Sora', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+
+  --color-page: #fafaf9;
+  --color-ink: #1a1a1a;
+  --color-ink-muted: #5c5c5c;
+  --color-border: #e5e4e1;
+  --color-accent: #9966ff;
+  --color-accent-light: #f0efed;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* [Reason] Offset hash links for fixed navbar; snap so one section fills the viewport */
+    scroll-padding-top: 4.5rem;
+    scroll-snap-type: y proximity;
+    font-size: 16px;
+  }
+
+  body {
+    @apply m-0 min-h-svh bg-page font-sans text-ink leading-[1.7] antialiased;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  /* [Reason] Each nav target occupies at least one viewport below the navbar */
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    min-height: calc(100svh - 4.5rem);
+  }
+
+}
