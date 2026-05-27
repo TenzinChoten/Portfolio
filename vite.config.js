@@ -11,4 +11,5 @@ const base =
 export default defineConfig({
   base,
   plugins: [react(), tailwindcss()],
+  base: '/portfolio/',
 })
