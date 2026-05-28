@@ -4,7 +4,6 @@ import { PROJECTS } from '../../data/projects'
 import { heroItem } from '../../animations/hero'
 import { cn } from '../../utils/cn'
 
-// [Reason] Match other sections for consistent left alignment and width
 const SECTION_INSET = 'px-6 sm:px-10 lg:px-14 xl:px-16'
 
 function ProjectTag({ label }) {
@@ -21,11 +20,9 @@ function ProjectCard({ title, description, tags, href }) {
       className={cn(
         'flex h-full flex-col rounded-2xl border border-border bg-white',
         'transition-[border-color,transform] duration-200',
-        // [Reason] Lift on hover without clipping card edges inside the projects grid
         'hover:-translate-y-1 hover:border-accent',
       )}
     >
-      {/* [Reason] Compact padding so four cards fit in one viewport like the reference layout */}
       <div className="flex h-full flex-col p-5 sm:p-6">
         <h3 className="mb-1.5 font-display text-[1.05rem] font-semibold text-ink sm:text-[1.1rem]">
           {title}
@@ -60,12 +57,10 @@ export default function Projects() {
       id="projects"
       className={cn(
         'border-t border-border bg-page',
-        // [Reason] On md+ fill one viewport and center the grid like the reference screenshot
         'md:snap-section md:flex md:min-h-[calc(100svh-4.5rem)] md:flex-col',
       )}
       aria-labelledby="projects-title"
     >
-      {/* [Reason] Center header + 2×2 grid in one viewport when Projects nav is clicked */}
       <div
         className={cn(
           'py-12 sm:py-14 md:flex md:flex-1 md:flex-col md:justify-center md:py-8 lg:py-10',

@@ -47,7 +47,6 @@ export default function Navbar() {
           as="div"
           className="flex h-[4.5rem] w-full max-w-none items-center px-6 sm:px-10 lg:px-14 xl:px-16"
         >
-          {/* [Reason] Brand flush left; all nav items grouped flush right */}
           <NavBrand className="shrink-0" />
 
           <nav
@@ -92,7 +91,6 @@ export default function Navbar() {
         onNavigate={handleNavClick}
       />
 
-      {/* [Reason] Reserve space for fixed navbar */}
       <div className="h-[4.5rem]" aria-hidden />
     </>
   )

@@ -22,19 +22,18 @@ Modern developer portfolio built with React, Vite, Tailwind CSS, Framer Motion, 
 
 ## GitHub Pages
 
-1. Set your repository name in `.env` or when building:
+### Deploy with GitHub Actions (recommended)
 
-   ```bash
-   GITHUB_REPOSITORY_NAME=your-repo-name npm run build:gh-pages
-   ```
+1. In GitHub → **Settings** → **Pages**, set **Build and deployment** → **Source** to **GitHub Actions**.
+2. Push to `main`. The workflow in `.github/workflows/deploy.yml` builds `dist/` and publishes to Pages.
 
-2. Deploy:
+### Deploy manually (optional)
 
-   ```bash
-   npm run deploy
-   ```
+```bash
+npm run deploy
+```
 
-3. In GitHub → **Settings** → **Pages**, set source to the `gh-pages` branch.
+Then set **Source** to the `gh-pages` branch. Manual deploys use the older built-in Pages workflow and may show Node.js 20 deprecation notices until you switch to GitHub Actions.
 
 For a user/org site (`username.github.io`), use `npm run build` with default base `/`.
 
@@ -53,8 +52,19 @@ src/
 └── App.jsx
 ```
 
+## Environment variables
+
+Copy `.env.example` to `.env` for local builds:
+
+| Variable | Description |
+| --- | --- |
+| `GITHUB_REPOSITORY_NAME` | Repo folder name for GitHub Pages base path |
+| `VITE_UMAMI_WEBSITE_ID` | Optional Umami website ID for analytics |
+
+For GitHub Actions deploys, add a repository secret named `VITE_UMAMI_WEBSITE_ID` (Settings → Secrets and variables → Actions). The Umami ID is not committed to the repo.
+
 ## Customize
 
-- Update brand name in `src/components/navbar/NavBrand.jsx`
+- Update brand name in `src/data/brand.js` and `src/components/navbar/NavBrand.jsx`
 - Edit nav links in `src/data/navigation.js`
 - Add sections with matching `id` attributes for scroll-spy highlighting

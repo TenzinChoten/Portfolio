@@ -16,7 +16,6 @@ export default function NavBrand({ className }) {
       transition={{ duration: 0.2 }}
     >
       <span className="font-bold text-ink">{BRAND.firstName}</span>
-      {/* [Reason] Two spaces between names so Tenzin and Choten read clearly apart */}
       {'  '}
       <span className="font-normal text-ink-muted">{BRAND.lastName}</span>
     </motion.a>

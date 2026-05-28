@@ -28,7 +28,6 @@ export const CONTACT_CTA = {
   analyticsEvent: ANALYTICS_EVENTS.contact,
 }
 
-// [Reason] Section ids for scroll-spy when sections are added
 export const SECTION_IDS = [
   'home',
   ...NAV_LINKS.map((item) => item.id),

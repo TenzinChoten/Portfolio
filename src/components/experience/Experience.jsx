@@ -3,7 +3,6 @@ import { EXPERIENCE } from '../../data/experience'
 import { heroItem } from '../../animations/hero'
 import { cn } from '../../utils/cn'
 
-// [Reason] Match hero/about horizontal inset for consistent left alignment
 const SECTION_INSET = 'px-6 sm:px-10 lg:px-14 xl:px-16'
 
 function ExpTag({ label }) {

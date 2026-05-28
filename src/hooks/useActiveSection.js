@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { SECTION_IDS } from '../data/navigation'
 
-// [Reason] Highlight the nav link that matches the section currently in view
 export function useActiveSection(sectionIds = SECTION_IDS) {
   const [activeId, setActiveId] = useState(sectionIds[0] ?? 'home')
 
@@ -25,7 +24,6 @@ export function useActiveSection(sectionIds = SECTION_IDS) {
         }
       },
       {
-        /* [Reason] Match full-viewport snap sections so nav highlights the section in frame */
         rootMargin: '-35% 0px -50% 0px',
         threshold: [0, 0.25, 0.5, 0.75, 1],
       },

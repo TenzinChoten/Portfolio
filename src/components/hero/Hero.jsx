@@ -5,7 +5,6 @@ import { heroContainer, heroItem } from '../../animations/hero'
 import { cn } from '../../utils/cn'
 import { umamiEventProps } from '../../utils/analytics'
 
-// [Reason] Match navbar horizontal inset so hero copy aligns with the brand on the left
 const HERO_INSET = 'px-6 sm:px-10 lg:px-14 xl:px-16'
 
 function HeroBadge({ label }) {
@@ -78,7 +77,6 @@ export default function Hero() {
       )}
       aria-labelledby="hero-heading"
     >
-      {/* [Reason] Same max width as reference site keeps content left-aligned inside a centered column */}
       <motion.div
         className="mx-auto w-full max-w-[1200px] text-left"
         variants={heroContainer}

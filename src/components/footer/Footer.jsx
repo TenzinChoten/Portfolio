@@ -1,7 +1,6 @@
 import { BRAND } from '../../data/brand'
 import { cn } from '../../utils/cn'
 
-// [Reason] Match section horizontal inset for alignment with page content
 const SECTION_INSET = 'px-6 sm:px-10 lg:px-14 xl:px-16'
 
 export default function Footer() {

@@ -1,4 +1,3 @@
-// [Reason] Scroll hash targets with navbar offset so section content is not clipped under the header
 export function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId)
   if (!section) {

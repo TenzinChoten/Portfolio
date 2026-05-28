@@ -6,10 +6,8 @@ import Footer from '../footer'
 import { cn } from '../../utils/cn'
 import { umamiEventProps } from '../../utils/analytics'
 
-// [Reason] Match hero/about horizontal inset for consistent left alignment
 const SECTION_INSET = 'px-6 sm:px-10 lg:px-14 xl:px-16'
 
-// [Reason] Lucide build here omits brand icons — use inline SVGs for LinkedIn/GitHub
 function LinkedInIcon({ className }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -79,7 +77,6 @@ export default function Contact() {
       )}
       aria-labelledby="contact-title"
     >
-      {/* [Reason] Flex child grows so footer sits at bottom of contact snap viewport */}
       <div
         className={cn(
           'flex flex-1 flex-col justify-center py-16 sm:py-20 lg:py-24',
@@ -128,7 +125,6 @@ export default function Contact() {
             </a>
           </motion.div>
 
-          {/* [Reason] Right column holds social links where the reference form sat — no message form */}
           <motion.div
             className="flex flex-col justify-center"
             initial="hidden"

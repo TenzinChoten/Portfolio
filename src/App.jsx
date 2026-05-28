@@ -14,7 +14,6 @@ function App() {
         <About />
         <Experience />
         <Projects />
-        {/* [Reason] Footer lives inside Contact so #contact scroll shows both */}
         <Contact />
       </main>
     </div>

@@ -4,7 +4,6 @@ export const PROJECTS = {
   headline:
     'Full stack applications built end to end — from backend architecture and APIs to responsive web and mobile experiences.',
   items: [
-    // [Reason] Add TLCM library catalogue platform to projects portfolio
     {
       id: 'tlcm',
       title: 'TLCM (Tibetan Library & Catalogue Management)',
@@ -26,12 +25,10 @@ export const PROJECTS = {
       ],
       href: null,
     },
-    // [Reason] Replace gym management entry with Thukk full-stack dating platform
     {
       id: 'thukk',
       title: 'Thukk',
       description:
-        // [Reason] Shorten Thukk copy to roughly half length for portfolio readability
         'Built a scalable full-stack community dating platform for meaningful connections through communities, intelligent matching, and real-time interaction. Developed a production backend with JWT authentication, refresh token rotation, role-based authorization, WebSockets, matchmaking, and moderation. Engineered relational systems for likes, matches, and conversations with Cloudinary uploads, DTO-based APIs, Docker deployment, and security hardening.',
       tags: [
         'PostgreSQL',
@@ -68,7 +65,6 @@ export const PROJECTS = {
       ],
       href: null,
     },
-    // [Reason] Move Apex Gym to last position in projects list
     {
       id: 'apex-gym',
       title: 'Apex Gym',

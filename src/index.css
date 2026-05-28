@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
 @theme {
-  /* [Reason] Match rammaheshwari.com font pairing (Sora body, Fraunces display) */
   --font-sans: 'Sora', system-ui, sans-serif;
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
 
@@ -16,7 +15,6 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* [Reason] Offset hash links for fixed navbar; snap so one section fills the viewport */
     scroll-padding-top: 4.5rem;
     scroll-snap-type: y proximity;
     font-size: 16px;
@@ -33,7 +31,6 @@
 }
 
 @layer utilities {
-  /* [Reason] Each nav target occupies at least one viewport below the navbar */
   .snap-section {
     scroll-snap-align: start;
     scroll-snap-stop: normal;

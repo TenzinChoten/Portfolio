@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 
-// [Reason] Prevent background scroll while the mobile menu is open
 export function useLockBodyScroll(locked) {
   useEffect(() => {
     if (!locked) return undefined
