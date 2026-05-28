@@ -22,18 +22,14 @@ Modern developer portfolio built with React, Vite, Tailwind CSS, Framer Motion, 
 
 ## GitHub Pages
 
-### Deploy with GitHub Actions (recommended)
-
-1. In GitHub → **Settings** → **Pages**, set **Build and deployment** → **Source** to **GitHub Actions**.
-2. Push to `main`. The workflow in `.github/workflows/deploy.yml` builds `dist/` and publishes to Pages.
-
-### Deploy manually (optional)
+1. In GitHub → **Settings** → **Pages**, set **Build and deployment** → **Source** to the **`gh-pages`** branch (root).
+2. From your machine, publish after changes on `main`:
 
 ```bash
 npm run deploy
 ```
 
-Then set **Source** to the `gh-pages` branch. Manual deploys use the older built-in Pages workflow and may show Node.js 20 deprecation notices until you switch to GitHub Actions.
+That runs `predeploy` (`npm run build`), then pushes `dist/` to the `gh-pages` branch via the [`gh-pages`](https://www.npmjs.com/package/gh-pages) package. Pushes to `main` alone do not update the live site.
 
 For a user/org site (`username.github.io`), use `npm run build` with default base `/`.
 
@@ -61,7 +57,7 @@ Copy `.env.example` to `.env` for local builds:
 | `GITHUB_REPOSITORY_NAME` | Repo folder name for GitHub Pages base path |
 | `VITE_UMAMI_WEBSITE_ID` | Optional Umami website ID for analytics |
 
-For GitHub Actions deploys, add a repository secret named `VITE_UMAMI_WEBSITE_ID` (Settings → Secrets and variables → Actions). The Umami ID is not committed to the repo.
+Set `VITE_UMAMI_WEBSITE_ID` in `.env` before `npm run deploy` if you want analytics on the published site. The Umami ID is not committed to the repo.
 
 ## Customize
 
