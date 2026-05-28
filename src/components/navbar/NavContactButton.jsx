@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '../../utils/cn'
+import { trackEvent } from '../../utils/analytics'
 import { scrollToSection } from '../../utils/scrollToSection'
 
 export default function NavContactButton({
@@ -8,6 +9,7 @@ export default function NavContactButton({
   label,
   className,
   onClick,
+  analyticsEvent,
   layout = 'desktop',
 }) {
   const isDesktop = layout === 'desktop'
@@ -19,9 +21,10 @@ export default function NavContactButton({
         event.preventDefault()
         scrollToSection(hash)
       }
+      trackEvent(analyticsEvent)
       onClick?.(event)
     },
-    [href, onClick],
+    [analyticsEvent, href, onClick],
   )
 
   return (

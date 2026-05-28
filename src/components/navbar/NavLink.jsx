@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '../../utils/cn'
+import { trackEvent } from '../../utils/analytics'
 import { scrollToSection } from '../../utils/scrollToSection'
 
 export default function NavLink({
@@ -8,6 +9,7 @@ export default function NavLink({
   label,
   isActive,
   onClick,
+  analyticsEvent,
   className,
   layout = 'desktop',
 }) {
@@ -20,9 +22,10 @@ export default function NavLink({
         event.preventDefault()
         scrollToSection(hash)
       }
+      trackEvent(analyticsEvent)
       onClick?.(event)
     },
-    [href, onClick],
+    [analyticsEvent, href, onClick],
   )
 
   return (

@@ -61,6 +61,7 @@ export default function Navbar() {
                     href={item.href}
                     label={item.label}
                     isActive={activeSection === item.id}
+                    analyticsEvent={item.analyticsEvent}
                     layout="desktop"
                   />
                 </li>
@@ -69,6 +70,7 @@ export default function Navbar() {
                 <NavContactButton
                   href={CONTACT_CTA.href}
                   label={CONTACT_CTA.label}
+                  analyticsEvent={CONTACT_CTA.analyticsEvent}
                 />
               </li>
             </ul>

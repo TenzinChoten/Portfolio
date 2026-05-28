@@ -47,6 +47,7 @@ export default function MobileMenu({
                     href={item.href}
                     label={item.label}
                     isActive={activeSection === item.id}
+                    analyticsEvent={item.analyticsEvent}
                     onClick={onNavigate}
                     layout="mobile"
                   />
@@ -62,6 +63,7 @@ export default function MobileMenu({
                 <NavContactButton
                   href={CONTACT_CTA.href}
                   label={CONTACT_CTA.label}
+                  analyticsEvent={CONTACT_CTA.analyticsEvent}
                   layout="mobile"
                   onClick={onNavigate}
                 />

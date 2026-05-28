@@ -1,3 +1,5 @@
+import { ANALYTICS_EVENTS } from '../utils/analytics'
+
 export const HERO = {
   status: 'OPEN TO OPPORTUNITIES',
   headline: {
@@ -15,12 +17,14 @@ export const HERO = {
       href: '#contact',
       variant: 'primary',
       showArrow: true,
+      analyticsEvent: ANALYTICS_EVENTS.contact,
     },
     {
       id: 'about',
       label: 'About Me',
       href: '#about',
       variant: 'secondary',
+      analyticsEvent: ANALYTICS_EVENTS.about,
     },
   ],
 }

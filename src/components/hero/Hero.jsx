@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import { HERO } from '../../data/hero'
 import { heroContainer, heroItem } from '../../animations/hero'
 import { cn } from '../../utils/cn'
+import { trackEvent } from '../../utils/analytics'
 
 // [Reason] Match navbar horizontal inset so hero copy aligns with the brand on the left
 const HERO_INSET = 'px-6 sm:px-10 lg:px-14 xl:px-16'
@@ -49,6 +50,7 @@ function HeroCta({ cta }) {
   return (
     <motion.a
       href={cta.href}
+      onClick={() => trackEvent(cta.analyticsEvent)}
       className={cn(
         'inline-flex items-center justify-center gap-2 rounded-full font-sans text-[0.9rem] font-medium outline-none transition-[transform,box-shadow,border-color,background-color] duration-200',
         'focus-visible:ring-2 focus-visible:ring-ink/30 focus-visible:ring-offset-2 focus-visible:ring-offset-page',

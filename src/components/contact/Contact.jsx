@@ -4,6 +4,7 @@ import { CONTACT } from '../../data/contact'
 import { heroItem } from '../../animations/hero'
 import Footer from '../footer'
 import { cn } from '../../utils/cn'
+import { trackEvent } from '../../utils/analytics'
 
 // [Reason] Match hero/about horizontal inset for consistent left alignment
 const SECTION_INSET = 'px-6 sm:px-10 lg:px-14 xl:px-16'
@@ -30,7 +31,7 @@ const SOCIAL_ICONS = {
   github: GitHubIcon,
 }
 
-function SocialLinkCard({ name, handle, href, iconId }) {
+function SocialLinkCard({ name, handle, href, iconId, analyticsEvent }) {
   const Icon = SOCIAL_ICONS[iconId]
 
   return (
@@ -38,6 +39,7 @@ function SocialLinkCard({ name, handle, href, iconId }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackEvent(analyticsEvent)}
       className={cn(
         'group flex items-center gap-4 rounded-2xl border border-border bg-white p-5',
         'transition-[border-color,transform,box-shadow] duration-200',
@@ -114,6 +116,7 @@ export default function Contact() {
 
             <a
               href={mailtoHref}
+              onClick={() => trackEvent(CONTACT.emailAnalyticsEvent)}
               className={cn(
                 'mt-8 inline-flex items-center gap-2 font-sans text-[0.95rem] font-medium text-ink underline decoration-ink/30 underline-offset-4',
                 'transition-[color,decoration-color] duration-200 hover:text-accent hover:decoration-accent',
@@ -144,6 +147,7 @@ export default function Contact() {
                   name={link.name}
                   handle={link.handle}
                   href={link.href}
+                  analyticsEvent={link.analyticsEvent}
                 />
               ))}
             </div>
