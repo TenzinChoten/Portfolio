@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '../../utils/cn'
-import { trackEvent } from '../../utils/analytics'
+import { umamiEventProps } from '../../utils/analytics'
 import { scrollToSection } from '../../utils/scrollToSection'
 
 export default function NavContactButton({
@@ -21,16 +21,16 @@ export default function NavContactButton({
         event.preventDefault()
         scrollToSection(hash)
       }
-      trackEvent(analyticsEvent)
       onClick?.(event)
     },
-    [analyticsEvent, href, onClick],
+    [href, onClick],
   )
 
   return (
     <motion.a
       href={href}
       onClick={handleClick}
+      {...umamiEventProps(analyticsEvent)}
       className={cn(
         'inline-flex items-center justify-center rounded-full bg-ink font-sans text-[0.85rem] font-medium text-page outline-none transition-[transform,box-shadow] duration-200',
         'hover:-translate-y-px hover:shadow-[0_4px_16px_rgba(0,0,0,0.15)]',

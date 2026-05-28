@@ -9,26 +9,8 @@ export const ANALYTICS_EVENTS = {
   email: 'Email',
 }
 
-const pending = []
-
-function flushPending() {
-  if (typeof window.umami?.track !== 'function') return
-  while (pending.length > 0) {
-    const { name, data } = pending.shift()
-    window.umami.track(name, data)
-  }
-}
-
-// [Reason] Umami loads async; flush queued clicks once the script is ready
-export function onUmamiReady() {
-  flushPending()
-}
-
-export function trackEvent(eventName, data) {
-  if (!import.meta.env.PROD || !eventName) return
-  if (typeof window.umami?.track === 'function') {
-    window.umami.track(eventName, data)
-    return
-  }
-  pending.push({ name: eventName, data })
+// [Reason] Umami waits for the beacon before mailto/external navigation; onClick-only tracking often drops those events
+export function umamiEventProps(eventName) {
+  if (!eventName) return {}
+  return { 'data-umami-event': eventName }
 }

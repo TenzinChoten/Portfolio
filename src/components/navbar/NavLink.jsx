@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '../../utils/cn'
-import { trackEvent } from '../../utils/analytics'
+import { umamiEventProps } from '../../utils/analytics'
 import { scrollToSection } from '../../utils/scrollToSection'
 
 export default function NavLink({
@@ -22,16 +22,16 @@ export default function NavLink({
         event.preventDefault()
         scrollToSection(hash)
       }
-      trackEvent(analyticsEvent)
       onClick?.(event)
     },
-    [analyticsEvent, href, onClick],
+    [href, onClick],
   )
 
   return (
     <motion.a
       href={href}
       onClick={handleClick}
+      {...umamiEventProps(analyticsEvent)}
       className={cn(
         'outline-none transition-colors duration-300',
         'focus-visible:ring-2 focus-visible:ring-neutral-900/20 focus-visible:ring-offset-2 focus-visible:ring-offset-white',

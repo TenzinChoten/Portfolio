@@ -4,7 +4,7 @@ import { CONTACT } from '../../data/contact'
 import { heroItem } from '../../animations/hero'
 import Footer from '../footer'
 import { cn } from '../../utils/cn'
-import { trackEvent } from '../../utils/analytics'
+import { umamiEventProps } from '../../utils/analytics'
 
 // [Reason] Match hero/about horizontal inset for consistent left alignment
 const SECTION_INSET = 'px-6 sm:px-10 lg:px-14 xl:px-16'
@@ -39,7 +39,7 @@ function SocialLinkCard({ name, handle, href, iconId, analyticsEvent }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => trackEvent(analyticsEvent)}
+      {...umamiEventProps(analyticsEvent)}
       className={cn(
         'group flex items-center gap-4 rounded-2xl border border-border bg-white p-5',
         'transition-[border-color,transform,box-shadow] duration-200',
@@ -116,7 +116,7 @@ export default function Contact() {
 
             <a
               href={mailtoHref}
-              onClick={() => trackEvent(CONTACT.emailAnalyticsEvent)}
+              {...umamiEventProps(CONTACT.emailAnalyticsEvent)}
               className={cn(
                 'mt-8 inline-flex items-center gap-2 font-sans text-[0.95rem] font-medium text-ink underline decoration-ink/30 underline-offset-4',
                 'transition-[color,decoration-color] duration-200 hover:text-accent hover:decoration-accent',
